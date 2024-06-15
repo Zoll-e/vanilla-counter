@@ -2,7 +2,7 @@
 
 ## Description:
 
-This is a 1 millionth ~~*Hello World!*~~  counter app. Why did I do it then you may wonder, well it was time for me to learn framework-agnostic javascript in depth.
+This is a 1 millionth ~~*Hello World!*~~  counter app. Why did I do it then you may wonder, well it was time for me to learn framework-agnostic javascript in depth. Click [here](https://zoll-e.github.io/vanilla-counter/) to check it on github pages.
 
 ## What did I learn:
 > State management using the observer design pattern
