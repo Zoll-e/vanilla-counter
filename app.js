@@ -42,6 +42,7 @@ class UI {
   static displayCount() {
     const count = Store.getCount();
     document.querySelector("#count").textContent = count;
+    UI.toggleResetButton(count);
   }
 
   static displayResetButton() {
@@ -50,13 +51,13 @@ class UI {
 
     const button = document.createElement("a");
     button.id = "reset";
-    button.className = "btn btn-info px-5 mx-5";
+    button.className = "btn btn-info w-50 d-block";
+    button.style.margin = "auto";
     button.appendChild(document.createTextNode("Reset"));
 
-    const container = document.querySelector(".container");
-    const count = document.querySelector("#count");
+    const title = document.querySelector("#title");
+    title.parentNode.insertBefore(button, title.nextSibling);
 
-    container.insertBefore(button, count);
     document.querySelector("#reset").addEventListener("click", () => {
       Store.resetCount();
     });
@@ -70,13 +71,16 @@ class UI {
     }
   }
 
-  static updateCount(count) {
-    document.querySelector("#count").textContent = count;
-    if (count !== 0) {
+  static toggleResetButton(count) {
+    if (parseInt(count) !== 0) {
       UI.displayResetButton();
     } else {
       UI.hideResetButton();
     }
+  }
+  static updateCount(count) {
+    document.querySelector("#count").textContent = count;
+    UI.toggleResetButton(count);
   }
 }
 
